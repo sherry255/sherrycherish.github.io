@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Docker," />
 
 
 
@@ -87,25 +87,19 @@
 
 
 
-<meta name="description" content="前段时间想用electron做一个类似TODO的应用, 我平时的工作写后端比较多, 走了一些坑, 也学了一些东西, 以下是我学习到的localstorage的总结:
-localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储，永不失效，除非手动删除
-浏览器各种存储方式比较cookie(4k)localStorage(5M)
-各大网站使用的浏览器存储方式比较:走访了一些网">
+<meta name="description" content="去官网下载一个 https://www.docker.com/some terminal:1234567docker pull daocloud.io/library/ubuntu:latestdocker imagesdocker tag daocloud.io/library/ubuntu ubuntu   docker run -ti ubuntu /bin/bash
+###Docker1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Localstorage 使用">
-<meta property="og:url" content="http://yoursite.com/2017/02/21/Localstorage-使用/index.html">
+<meta property="og:title" content="docker 常用命令总结">
+<meta property="og:url" content="http://yoursite.com/2017/01/21/docker-常用命令总结/index.html">
 <meta property="og:site_name" content="sherry's blog">
-<meta property="og:description" content="前段时间想用electron做一个类似TODO的应用, 我平时的工作写后端比较多, 走了一些坑, 也学了一些东西, 以下是我学习到的localstorage的总结:
-localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储，永不失效，除非手动删除
-浏览器各种存储方式比较cookie(4k)localStorage(5M)
-各大网站使用的浏览器存储方式比较:走访了一些网">
-<meta property="og:updated_time" content="2017-02-21T15:15:43.000Z">
+<meta property="og:description" content="去官网下载一个 https://www.docker.com/some terminal:1234567docker pull daocloud.io/library/ubuntu:latestdocker imagesdocker tag daocloud.io/library/ubuntu ubuntu   docker run -ti ubuntu /bin/bash
+###Docker1">
+<meta property="og:updated_time" content="2017-02-22T02:14:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Localstorage 使用">
-<meta name="twitter:description" content="前段时间想用electron做一个类似TODO的应用, 我平时的工作写后端比较多, 走了一些坑, 也学了一些东西, 以下是我学习到的localstorage的总结:
-localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储，永不失效，除非手动删除
-浏览器各种存储方式比较cookie(4k)localStorage(5M)
-各大网站使用的浏览器存储方式比较:走访了一些网">
+<meta name="twitter:title" content="docker 常用命令总结">
+<meta name="twitter:description" content="去官网下载一个 https://www.docker.com/some terminal:1234567docker pull daocloud.io/library/ubuntu:latestdocker imagesdocker tag daocloud.io/library/ubuntu ubuntu   docker run -ti ubuntu /bin/bash
+###Docker1">
 
 
 
@@ -133,13 +127,13 @@ localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/21/Localstorage-使用/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/21/docker-常用命令总结/"/>
 
 
 
 
 
-  <title> Localstorage 使用 | sherry's blog </title>
+  <title> docker 常用命令总结 | sherry's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -268,7 +262,7 @@ localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/Localstorage-使用/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/21/docker-常用命令总结/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Sherry">
@@ -292,7 +286,7 @@ localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储�
             
             
               
-                Localstorage 使用
+                docker 常用命令总结
               
             
           </h1>
@@ -307,8 +301,8 @@ localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T15:35:00+08:00">
-                2017-02-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-21T14:33:12+08:00">
+                2017-01-21
               </time>
             
 
@@ -343,16 +337,9 @@ localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储�
       
 
       
-        <p>前段时间想用electron做一个类似TODO的应用, 我平时的工作写后端比较多, 走了一些坑, 也学了一些东西, 以下是我学习到的localstorage的总结:</p>
-<h3 id="localStorage-基本特点"><a href="#localStorage-基本特点" class="headerlink" title="localStorage 基本特点:"></a>localStorage 基本特点:</h3><p>以键值对(Key-Value)的方式存储，永久存储，永不失效，除非手动删除</p>
-<h3 id="浏览器各种存储方式比较"><a href="#浏览器各种存储方式比较" class="headerlink" title="浏览器各种存储方式比较"></a>浏览器各种存储方式比较</h3><p>cookie(4k)<br>localStorage(5M)</p>
-<h3 id="各大网站使用的浏览器存储方式比较"><a href="#各大网站使用的浏览器存储方式比较" class="headerlink" title="各大网站使用的浏览器存储方式比较:"></a>各大网站使用的浏览器存储方式比较:</h3><p>走访了一些网站, 看了看控制台的存储使用状况, 发现还是cookie居多, 也有用LocalStorage的(比如淘宝, 京东(不过大多是直接存DOM))</p>
-<h3 id="网上常见的locLocalstorage使用说明"><a href="#网上常见的locLocalstorage使用说明" class="headerlink" title="网上常见的locLocalstorage使用说明:"></a>网上常见的locLocalstorage使用说明:</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"> function parseDom(arg) &#123;</div><div class="line"></div><div class="line">　　 var objE = document.createElement(&quot;div&quot;);</div><div class="line"></div><div class="line">　　 objE.innerHTML = arg;</div><div class="line"></div><div class="line">　　 return objE.childNodes;</div><div class="line"></div><div class="line">&#125;;</div><div class="line">// 将DOM转化为string</div><div class="line">a = $(&quot;#lists&quot;).html()</div><div class="line"></div><div class="line">// 存储到localstorage</div><div class="line">//localStorage.setItem(&quot;todos&quot;, JSON.stringify(a))</div><div class="line">localStorage.setItem(&quot;todos&quot;, a)</div><div class="line"></div><div class="line">// 将string 转化为DOM</div><div class="line">b = parseDom(localStorage[&quot;todos&quot;])</div><div class="line"></div><div class="line">最后插入DOM</div><div class="line">$(&quot;#lists&quot;).empty()</div><div class="line">$(&quot;#lists&quot;).append(b)</div></pre></td></tr></table></figure>
-<h3 id="直接用LocalStorage-存储DOM的方式"><a href="#直接用LocalStorage-存储DOM的方式" class="headerlink" title="直接用LocalStorage 存储DOM的方式"></a>直接用LocalStorage 存储DOM的方式</h3><p>做GTD时, 我想, 既然需要存储的信息不多(<5m), 所以何必不用localstorage直接存储dom?="" 实现方式如下:="" <figure="" class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 本地保存功能</div><div class="line">// var todos = JSON.parse(localStorage.getItem(&apos;todos&apos;))</div><div class="line">function saveTODO() &#123;</div><div class="line">    var l = document.querySelector(&apos;#lists&apos;).childNodes</div><div class="line">    localStorage.setItem(&quot;todos&quot;, JSON.stringify(l))</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 清除所有todos</div><div class="line">function clearAll() &#123;</div><div class="line">    localStorage.clear()</div><div class="line">&#125;</div></pre></td></tr></table></5m),></p>
-<h3 id="Localstorage-的另类用法"><a href="#Localstorage-的另类用法" class="headerlink" title="Localstorage 的另类用法"></a>Localstorage 的另类用法</h3><p>web存储器之间的区别主要是大小, 鉴于web的特殊性, 其实我们可以利用 localStorage 做一些网站上的优化, 例如: </p>
-<ul>
-<li>将一些常用的静态文件存入localStorage, 并按照使用频率排序, 低频的文件直接清除.这样可以大大提高网站的加载速度,节省流量</li>
-</ul>
+        <hr>
+<h3 id="去官网下载一个-https-www-docker-com"><a href="#去官网下载一个-https-www-docker-com" class="headerlink" title="去官网下载一个 https://www.docker.com/"></a>去官网下载一个 <a href="https://www.docker.com/" target="_blank" rel="external">https://www.docker.com/</a></h3><h3 id="some-terminal"><a href="#some-terminal" class="headerlink" title="some terminal:"></a>some terminal:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">docker pull daocloud.io/library/ubuntu:latest</div><div class="line"></div><div class="line">docker images</div><div class="line"></div><div class="line">docker tag daocloud.io/library/ubuntu ubuntu</div><div class="line"></div><div class="line">   docker run -ti ubuntu /bin/bash</div></pre></td></tr></table></figure>
+<p>###<br>Docker<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -d daocloud.io/mysql</div><div class="line"></div><div class="line"></div><div class="line">数据库跑起来了</div><div class="line"></div><div class="line">docker ps -a    ( 查看容器列表</div><div class="line"></div><div class="line"></div><div class="line">➜  ~ docker ps -a</div><div class="line">CONTAINER ID        IMAGE                       COMMAND                  CREATED              STATUS              PORTS                    NAMES</div><div class="line">8fc6f16357a2        daocloud.io/library/mysql   &quot;docker-entrypoint.sh&quot;   About a minute ago   Up About a minute   0.0.0.0:3306-&gt;3306/tcp   mysql</div><div class="line">df342d07692e        ubuntu                      &quot;/bin/bash&quot;              13 hours ago         Up 13 hours                                  determined_engelbart</div><div class="line"></div><div class="line"></div><div class="line">docker attach container-id   进入容器</div><div class="line"></div><div class="line">control + p + q 挂起容器</div><div class="line"></div><div class="line">docker run </div><div class="line">-p 端口:端口</div><div class="line">/bin/bash 入口进程</div><div class="line">如果不带 /bin/bash 则使用 默认的 entrypoint 配置。</div><div class="line"></div><div class="line">https://github.com/dockerfile/mysql/blob/master/Dockerfile</div><div class="line">CMD [&quot;mysqld_safe&quot;]   就是 默认执行的 程序（entrypoint）</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">镜像查找：https://hub.daocloud.io</div><div class="line"></div><div class="line">如果拉取的镜像有版本：daocloud.io/library/python:3.6</div><div class="line">运行的时候记得把版本带上：</div><div class="line"></div><div class="line">比如 docker run -ti daocloud.io/library/python:3.6 /bin/bash</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -374,6 +361,12 @@ localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储�
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+        </div>
+      
 
       
         
@@ -383,8 +376,8 @@ localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/21/Pythonic写法总结/" rel="next" title="Pythonic写法总结">
-                <i class="fa fa-chevron-left"></i> Pythonic写法总结
+              <a href="/2017/01/20/node-js学习总结/" rel="next" title="node.js学习总结">
+                <i class="fa fa-chevron-left"></i> node.js学习总结
               </a>
             
           </div>
@@ -393,8 +386,8 @@ localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/21/Linux-和-Unix-文件系统/" rel="prev" title="Linux 和 Unix 文件系统">
-                Linux 和 Unix 文件系统 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/21/hg-常用命令/" rel="prev" title="hg 常用命令">
+                hg 常用命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -513,7 +506,7 @@ localStorage 基本特点:以键值对(Key-Value)的方式存储，永久存储�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#localStorage-基本特点"><span class="nav-number">1.</span> <span class="nav-text">localStorage 基本特点:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器各种存储方式比较"><span class="nav-number">2.</span> <span class="nav-text">浏览器各种存储方式比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各大网站使用的浏览器存储方式比较"><span class="nav-number">3.</span> <span class="nav-text">各大网站使用的浏览器存储方式比较:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网上常见的locLocalstorage使用说明"><span class="nav-number">4.</span> <span class="nav-text">网上常见的locLocalstorage使用说明:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接用LocalStorage-存储DOM的方式"><span class="nav-number">5.</span> <span class="nav-text">直接用LocalStorage 存储DOM的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Localstorage-的另类用法"><span class="nav-number">6.</span> <span class="nav-text">Localstorage 的另类用法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#去官网下载一个-https-www-docker-com"><span class="nav-number">1.</span> <span class="nav-text">去官网下载一个 https://www.docker.com/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some-terminal"><span class="nav-number">2.</span> <span class="nav-text">some terminal:</span></a></li></ol></div>
             
 
           </div>

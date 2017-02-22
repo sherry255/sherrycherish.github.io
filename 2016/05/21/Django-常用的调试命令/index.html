@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Django,Python," />
 
 
 
@@ -87,19 +87,28 @@
 
 
 
-<meta name="description" content="去年6~8月我周末都是在听一些公开课,在cs212上学了一些更Pythonic的写法: 
-找出一个列表中元素出现次数最多的元素:1234567891011a = [1,2,3,4,2,2,3,3,3,1]# 统计a中每个元素出现的次数&amp;gt;&amp;gt;&amp;gt; b = &amp;#123;i:a.count(i)  for i in set(a) &amp;#125;&amp;gt;&amp;gt;&amp;gt; b&amp;#123;1: 1">
+<meta name="description" content="查看logtail -f /var/log/django/*
+杀死进程12killall -9 python kill -9 pid(进程号)
+查看当前运行1ps auxw | grep runserver
+mysql的状态service mysqld status
+关闭 nginx 的自启动chkconfig mysqld/nginx/gunicorn  on">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pythonic写法总结">
-<meta property="og:url" content="http://yoursite.com/2017/02/21/Pythonic写法总结/index.html">
+<meta property="og:title" content="Django 常用命令">
+<meta property="og:url" content="http://yoursite.com/2016/05/21/Django-常用的调试命令/index.html">
 <meta property="og:site_name" content="sherry's blog">
-<meta property="og:description" content="去年6~8月我周末都是在听一些公开课,在cs212上学了一些更Pythonic的写法: 
-找出一个列表中元素出现次数最多的元素:1234567891011a = [1,2,3,4,2,2,3,3,3,1]# 统计a中每个元素出现的次数&amp;gt;&amp;gt;&amp;gt; b = &amp;#123;i:a.count(i)  for i in set(a) &amp;#125;&amp;gt;&amp;gt;&amp;gt; b&amp;#123;1: 1">
-<meta property="og:updated_time" content="2017-02-22T01:32:05.000Z">
+<meta property="og:description" content="查看logtail -f /var/log/django/*
+杀死进程12killall -9 python kill -9 pid(进程号)
+查看当前运行1ps auxw | grep runserver
+mysql的状态service mysqld status
+关闭 nginx 的自启动chkconfig mysqld/nginx/gunicorn  on">
+<meta property="og:updated_time" content="2017-02-22T02:14:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pythonic写法总结">
-<meta name="twitter:description" content="去年6~8月我周末都是在听一些公开课,在cs212上学了一些更Pythonic的写法: 
-找出一个列表中元素出现次数最多的元素:1234567891011a = [1,2,3,4,2,2,3,3,3,1]# 统计a中每个元素出现的次数&amp;gt;&amp;gt;&amp;gt; b = &amp;#123;i:a.count(i)  for i in set(a) &amp;#125;&amp;gt;&amp;gt;&amp;gt; b&amp;#123;1: 1">
+<meta name="twitter:title" content="Django 常用命令">
+<meta name="twitter:description" content="查看logtail -f /var/log/django/*
+杀死进程12killall -9 python kill -9 pid(进程号)
+查看当前运行1ps auxw | grep runserver
+mysql的状态service mysqld status
+关闭 nginx 的自启动chkconfig mysqld/nginx/gunicorn  on">
 
 
 
@@ -127,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/21/Pythonic写法总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/05/21/Django-常用的调试命令/"/>
 
 
 
 
 
-  <title> Pythonic写法总结 | sherry's blog </title>
+  <title> Django 常用命令 | sherry's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/Pythonic写法总结/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/21/Django-常用的调试命令/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Sherry">
@@ -286,7 +295,7 @@
             
             
               
-                Pythonic写法总结
+                Django 常用命令
               
             
           </h1>
@@ -301,8 +310,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T14:58:00+08:00">
-                2017-02-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-21T14:15:18+08:00">
+                2016-05-21
               </time>
             
 
@@ -337,13 +346,12 @@
       
 
       
-        <p>去年6~8月我周末都是在听一些公开课,在cs212上学了一些更Pythonic的写法: </p>
-<h2 id="找出一个列表中元素出现次数最多的元素"><a href="#找出一个列表中元素出现次数最多的元素" class="headerlink" title="找出一个列表中元素出现次数最多的元素:"></a>找出一个列表中元素出现次数最多的元素:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">a = [1,2,3,4,2,2,3,3,3,1]</div><div class="line"></div><div class="line"># 统计a中每个元素出现的次数</div><div class="line">&gt;&gt;&gt; b = &#123;i:a.count(i)  for i in set(a) &#125;</div><div class="line"></div><div class="line">&gt;&gt;&gt; b</div><div class="line">&#123;1: 1, 2: 2, 3: 1, 4: 1&#125;</div><div class="line"></div><div class="line"></div><div class="line"># 返回value 最大值的key</div><div class="line">&gt;&gt;&gt; max(b, key=b.get)</div></pre></td></tr></table></figure>
-<h2 id="关于-Super"><a href="#关于-Super" class="headerlink" title="关于 Super"></a>关于 Super</h2><ol>
-<li>Super .<strong>init</strong>() 是为了继承父类的init. </li>
-<li>如果在子类中需要重新定义self.XXX  , 则 super 需要放在最上面<br>Ps : Python deepcopy 很浪费资源的 </li>
-</ol>
-<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>
+        <h2 id="查看log"><a href="#查看log" class="headerlink" title="查看log"></a>查看log</h2><p><code>tail -f /var/log/django/*</code></p>
+<h2 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">killall -9 python </div><div class="line">kill -9 pid(进程号)</div></pre></td></tr></table></figure>
+<h2 id="查看当前运行"><a href="#查看当前运行" class="headerlink" title="查看当前运行"></a>查看当前运行</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps auxw | grep runserver</div></pre></td></tr></table></figure>
+<h2 id="mysql的状态"><a href="#mysql的状态" class="headerlink" title="mysql的状态"></a>mysql的状态</h2><p><code>service mysqld status</code></p>
+<h2 id="关闭-nginx-的自启动"><a href="#关闭-nginx-的自启动" class="headerlink" title="关闭 nginx 的自启动"></a>关闭 nginx 的自启动</h2><p><code>chkconfig mysqld/nginx/gunicorn  on</code></p>
+
       
     </div>
 
@@ -366,6 +374,8 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Django/" rel="tag"># Django</a>
+          
             <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
@@ -379,18 +389,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/21/docker-常用命令总结/" rel="next" title="docker 常用命令总结">
-                <i class="fa fa-chevron-left"></i> docker 常用命令总结
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/21/Localstorage-使用/" rel="prev" title="Localstorage 使用">
-                Localstorage 使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/21/Pythonic写法总结/" rel="prev" title="Pythonic写法总结">
+                Pythonic写法总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -509,7 +515,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#找出一个列表中元素出现次数最多的元素"><span class="nav-number">1.</span> <span class="nav-text">找出一个列表中元素出现次数最多的元素:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-Super"><span class="nav-number">2.</span> <span class="nav-text">关于 Super</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text"> </span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看log"><span class="nav-number">1.</span> <span class="nav-text">查看log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杀死进程"><span class="nav-number">2.</span> <span class="nav-text">杀死进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前运行"><span class="nav-number">3.</span> <span class="nav-text">查看当前运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mysql的状态"><span class="nav-number">4.</span> <span class="nav-text">mysql的状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭-nginx-的自启动"><span class="nav-number">5.</span> <span class="nav-text">关闭 nginx 的自启动</span></a></li></ol></div>
             
 
           </div>

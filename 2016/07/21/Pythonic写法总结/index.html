@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Docker," />
+  <meta name="keywords" content="Python," />
 
 
 
@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="去官网下载一个 https://www.docker.com/some terminal:1234567docker pull daocloud.io/library/ubuntu:latestdocker imagesdocker tag daocloud.io/library/ubuntu ubuntu   docker run -ti ubuntu /bin/bash
-###Docker1">
+<meta name="description" content="去年6~8月我周末都是在听一些公开课,在cs212上学了一些更Pythonic的写法: 
+找出一个列表中元素出现次数最多的元素:1234567891011a = [1,2,3,4,2,2,3,3,3,1]# 统计a中每个元素出现的次数&amp;gt;&amp;gt;&amp;gt; b = &amp;#123;i:a.count(i)  for i in set(a) &amp;#125;&amp;gt;&amp;gt;&amp;gt; b&amp;#123;1: 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker 常用命令总结">
-<meta property="og:url" content="http://yoursite.com/2017/02/21/docker-常用命令总结/index.html">
+<meta property="og:title" content="Pythonic写法总结">
+<meta property="og:url" content="http://yoursite.com/2016/07/21/Pythonic写法总结/index.html">
 <meta property="og:site_name" content="sherry's blog">
-<meta property="og:description" content="去官网下载一个 https://www.docker.com/some terminal:1234567docker pull daocloud.io/library/ubuntu:latestdocker imagesdocker tag daocloud.io/library/ubuntu ubuntu   docker run -ti ubuntu /bin/bash
-###Docker1">
-<meta property="og:updated_time" content="2017-02-21T06:46:20.000Z">
+<meta property="og:description" content="去年6~8月我周末都是在听一些公开课,在cs212上学了一些更Pythonic的写法: 
+找出一个列表中元素出现次数最多的元素:1234567891011a = [1,2,3,4,2,2,3,3,3,1]# 统计a中每个元素出现的次数&amp;gt;&amp;gt;&amp;gt; b = &amp;#123;i:a.count(i)  for i in set(a) &amp;#125;&amp;gt;&amp;gt;&amp;gt; b&amp;#123;1: 1">
+<meta property="og:updated_time" content="2017-02-22T02:15:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker 常用命令总结">
-<meta name="twitter:description" content="去官网下载一个 https://www.docker.com/some terminal:1234567docker pull daocloud.io/library/ubuntu:latestdocker imagesdocker tag daocloud.io/library/ubuntu ubuntu   docker run -ti ubuntu /bin/bash
-###Docker1">
+<meta name="twitter:title" content="Pythonic写法总结">
+<meta name="twitter:description" content="去年6~8月我周末都是在听一些公开课,在cs212上学了一些更Pythonic的写法: 
+找出一个列表中元素出现次数最多的元素:1234567891011a = [1,2,3,4,2,2,3,3,3,1]# 统计a中每个元素出现的次数&amp;gt;&amp;gt;&amp;gt; b = &amp;#123;i:a.count(i)  for i in set(a) &amp;#125;&amp;gt;&amp;gt;&amp;gt; b&amp;#123;1: 1">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/21/docker-常用命令总结/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/21/Pythonic写法总结/"/>
 
 
 
 
 
-  <title> docker 常用命令总结 | sherry's blog </title>
+  <title> Pythonic写法总结 | sherry's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/21/docker-常用命令总结/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/21/Pythonic写法总结/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Sherry">
@@ -286,7 +286,7 @@
             
             
               
-                docker 常用命令总结
+                Pythonic写法总结
               
             
           </h1>
@@ -301,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T14:33:12+08:00">
-                2017-02-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-21T14:58:00+08:00">
+                2016-07-21
               </time>
             
 
@@ -337,10 +337,13 @@
       
 
       
-        <hr>
-<h3 id="去官网下载一个-https-www-docker-com"><a href="#去官网下载一个-https-www-docker-com" class="headerlink" title="去官网下载一个 https://www.docker.com/"></a>去官网下载一个 <a href="https://www.docker.com/" target="_blank" rel="external">https://www.docker.com/</a></h3><h3 id="some-terminal"><a href="#some-terminal" class="headerlink" title="some terminal:"></a>some terminal:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">docker pull daocloud.io/library/ubuntu:latest</div><div class="line"></div><div class="line">docker images</div><div class="line"></div><div class="line">docker tag daocloud.io/library/ubuntu ubuntu</div><div class="line"></div><div class="line">   docker run -ti ubuntu /bin/bash</div></pre></td></tr></table></figure>
-<p>###<br>Docker<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -d daocloud.io/mysql</div><div class="line"></div><div class="line"></div><div class="line">数据库跑起来了</div><div class="line"></div><div class="line">docker ps -a    ( 查看容器列表</div><div class="line"></div><div class="line"></div><div class="line">➜  ~ docker ps -a</div><div class="line">CONTAINER ID        IMAGE                       COMMAND                  CREATED              STATUS              PORTS                    NAMES</div><div class="line">8fc6f16357a2        daocloud.io/library/mysql   &quot;docker-entrypoint.sh&quot;   About a minute ago   Up About a minute   0.0.0.0:3306-&gt;3306/tcp   mysql</div><div class="line">df342d07692e        ubuntu                      &quot;/bin/bash&quot;              13 hours ago         Up 13 hours                                  determined_engelbart</div><div class="line"></div><div class="line"></div><div class="line">docker attach container-id   进入容器</div><div class="line"></div><div class="line">control + p + q 挂起容器</div><div class="line"></div><div class="line">docker run </div><div class="line">-p 端口:端口</div><div class="line">/bin/bash 入口进程</div><div class="line">如果不带 /bin/bash 则使用 默认的 entrypoint 配置。</div><div class="line"></div><div class="line">https://github.com/dockerfile/mysql/blob/master/Dockerfile</div><div class="line">CMD [&quot;mysqld_safe&quot;]   就是 默认执行的 程序（entrypoint）</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">镜像查找：https://hub.daocloud.io</div><div class="line"></div><div class="line">如果拉取的镜像有版本：daocloud.io/library/python:3.6</div><div class="line">运行的时候记得把版本带上：</div><div class="line"></div><div class="line">比如 docker run -ti daocloud.io/library/python:3.6 /bin/bash</div></pre></td></tr></table></figure></p>
-
+        <p>去年6~8月我周末都是在听一些公开课,在cs212上学了一些更Pythonic的写法: </p>
+<h2 id="找出一个列表中元素出现次数最多的元素"><a href="#找出一个列表中元素出现次数最多的元素" class="headerlink" title="找出一个列表中元素出现次数最多的元素:"></a>找出一个列表中元素出现次数最多的元素:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">a = [1,2,3,4,2,2,3,3,3,1]</div><div class="line"></div><div class="line"># 统计a中每个元素出现的次数</div><div class="line">&gt;&gt;&gt; b = &#123;i:a.count(i)  for i in set(a) &#125;</div><div class="line"></div><div class="line">&gt;&gt;&gt; b</div><div class="line">&#123;1: 1, 2: 2, 3: 1, 4: 1&#125;</div><div class="line"></div><div class="line"></div><div class="line"># 返回value 最大值的key</div><div class="line">&gt;&gt;&gt; max(b, key=b.get)</div></pre></td></tr></table></figure>
+<h2 id="关于-Super"><a href="#关于-Super" class="headerlink" title="关于 Super"></a>关于 Super</h2><ol>
+<li>Super .<strong>init</strong>() 是为了继承父类的init. </li>
+<li>如果在子类中需要重新定义self.XXX  , 则 super 需要放在最上面<br>Ps : Python deepcopy 很浪费资源的 </li>
+</ol>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>
       
     </div>
 
@@ -363,7 +366,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Docker/" rel="tag"># Docker</a>
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -376,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/21/用github-pages搭建博客遇到的一些坑/" rel="next" title="用Github Pages搭建博客遇到的一些坑">
-                <i class="fa fa-chevron-left"></i> 用Github Pages搭建博客遇到的一些坑
+              <a href="/2016/05/21/Django-常用的调试命令/" rel="next" title="Django 常用命令">
+                <i class="fa fa-chevron-left"></i> Django 常用命令
               </a>
             
           </div>
@@ -386,8 +389,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/21/Pythonic写法总结/" rel="prev" title="Pythonic写法总结">
-                Pythonic写法总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/08/21/Django-使用-Redis-的一些总结/" rel="prev" title="Django 使用 Redis 的一些总结">
+                Django 使用 Redis 的一些总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -506,7 +509,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#去官网下载一个-https-www-docker-com"><span class="nav-number">1.</span> <span class="nav-text">去官网下载一个 https://www.docker.com/</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some-terminal"><span class="nav-number">2.</span> <span class="nav-text">some terminal:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#找出一个列表中元素出现次数最多的元素"><span class="nav-number">1.</span> <span class="nav-text">找出一个列表中元素出现次数最多的元素:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-Super"><span class="nav-number">2.</span> <span class="nav-text">关于 Super</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text"> </span></a></li></ol></div>
             
 
           </div>
