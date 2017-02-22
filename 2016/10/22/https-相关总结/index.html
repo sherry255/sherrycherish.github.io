@@ -1,0 +1,799 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="https 相关文档
+目录
+证书申请
+nginx 文件配置
+相关链接
+
+
+1. 证书申请试验在个人网站上进行，考虑使用免费并且受浏览器默认信任的 SSL 证书。StartSSL本身是一家SSL证书公司，提供了付费的SSL证书。当然为了推广自家的SSL证书给更多的用户使用，StartSSL一直坚持为广大用户提供可被各大浏览器认可的免费SSL证书。本次证书在 startssl.com 申请。
+想了解证">
+<meta property="og:type" content="article">
+<meta property="og:title" content="https 相关总结">
+<meta property="og:url" content="http://yoursite.com/2016/10/22/https-相关总结/index.html">
+<meta property="og:site_name" content="sherry's blog">
+<meta property="og:description" content="https 相关文档
+目录
+证书申请
+nginx 文件配置
+相关链接
+
+
+1. 证书申请试验在个人网站上进行，考虑使用免费并且受浏览器默认信任的 SSL 证书。StartSSL本身是一家SSL证书公司，提供了付费的SSL证书。当然为了推广自家的SSL证书给更多的用户使用，StartSSL一直坚持为广大用户提供可被各大浏览器认可的免费SSL证书。本次证书在 startssl.com 申请。
+想了解证">
+<meta property="og:image" content="https://o903xqe5h.qnssl.com/wp-content/uploads/2015/12/new-startssl_01.gif">
+<meta property="og:image" content="https://o903xqe5h.qnssl.com/wp-content/uploads/2015/12/new-startssl_02.gif">
+<meta property="og:image" content="https://o903xqe5h.qnssl.com/wp-content/uploads/2015/12/new-startssl_04.gif">
+<meta property="og:image" content="http://yoursite.com/static/登录方式.png">
+<meta property="og:image" content="http://yoursite.com/static/用户中心.gif">
+<meta property="og:image" content="http://yoursite.com/static/免费证书申请.gif">
+<meta property="og:image" content="http://yoursite.com/static/证书目的.gif">
+<meta property="og:image" content="http://yoursite.com/static/验证域名.gif">
+<meta property="og:image" content="http://yoursite.com/static/添加域名2.png">
+<meta property="og:image" content="http://yoursite.com/static/添加域名3.png">
+<meta property="og:image" content="http://yoursite.com/static/域名添加成功.gif">
+<meta property="og:image" content="http://yoursite.com/static/证书类型.png">
+<meta property="og:image" content="http://yoursite.com/static/证书包括的主机名.png">
+<meta property="og:image" content="http://yoursite.com/static/CSR.png">
+<meta property="og:image" content="http://yoursite.com/static/key_and_csr1.png">
+<meta property="og:image" content="http://yoursite.com/static/下载证书.gif">
+<meta property="og:image" content="http://yoursite.com/static/证书.gif">
+<meta property="og:image" content="http://yoursite.com/static/linmu_cert.png">
+<meta property="og:image" content="http://yoursite.com/static/生成文件.png">
+<meta property="og:updated_time" content="2017-02-22T09:23:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="https 相关总结">
+<meta name="twitter:description" content="https 相关文档
+目录
+证书申请
+nginx 文件配置
+相关链接
+
+
+1. 证书申请试验在个人网站上进行，考虑使用免费并且受浏览器默认信任的 SSL 证书。StartSSL本身是一家SSL证书公司，提供了付费的SSL证书。当然为了推广自家的SSL证书给更多的用户使用，StartSSL一直坚持为广大用户提供可被各大浏览器认可的免费SSL证书。本次证书在 startssl.com 申请。
+想了解证">
+<meta name="twitter:image" content="https://o903xqe5h.qnssl.com/wp-content/uploads/2015/12/new-startssl_01.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/22/https-相关总结/"/>
+
+
+
+
+
+  <title> https 相关总结 | sherry's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sherry's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Pythoner, JSer</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/22/https-相关总结/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Sherry">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/11342665?v=3&s=460">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="sherry's blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="sherry's blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                https 相关总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-22T17:22:30+08:00">
+                2016-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/22/https-相关总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/22/https-相关总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="https-相关文档"><a href="#https-相关文档" class="headerlink" title="https 相关文档"></a>https 相关文档</h1><hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li>证书申请</li>
+<li>nginx 文件配置</li>
+<li>相关链接</li>
+</ol>
+<hr>
+<h2 id="1-证书申请"><a href="#1-证书申请" class="headerlink" title="1. 证书申请"></a>1. 证书申请</h2><p>试验在个人网站上进行，考虑使用<strong>免费</strong>并且<strong>受浏览器默认信任</strong>的 SSL 证书。StartSSL本身是一家SSL证书公司，提供了付费的SSL证书。当然为了推广自家的SSL证书给更多的用户使用，StartSSL一直坚持为广大用户提供可被各大浏览器认可的免费SSL证书。本次证书在 <a href="https://www.startssl.com" target="_blank" rel="external">startssl.com</a> 申请。</p>
+<p>想了解证书以及相应 CA 的区别、作用等请点击 <a href="http://www.barretlee.com/blog/2016/04/24/detail-about-ca-and-certs/" target="_blank" rel="external">这里</a></p>
+<h3 id="申请流程"><a href="#申请流程" class="headerlink" title="申请流程"></a>申请流程</h3><h4 id="一-新StartSSL注册账号"><a href="#一-新StartSSL注册账号" class="headerlink" title="一. 新StartSSL注册账号"></a>一. 新StartSSL注册账号</h4><h5 id="1-进入-startssl-com"><a href="#1-进入-startssl-com" class="headerlink" title="1. 进入 startssl.com"></a>1. 进入 <a href="https://www.startssl.com" target="_blank" rel="external">startssl.com</a></h5><h5 id="2-进入到StartSSL后，直接点击注册账号。"><a href="#2-进入到StartSSL后，直接点击注册账号。" class="headerlink" title="2. 进入到StartSSL后，直接点击注册账号。"></a>2. 进入到StartSSL后，直接点击注册账号。</h5><p><img src="https://o903xqe5h.qnssl.com/wp-content/uploads/2015/12/new-startssl_01.gif" alt="注册"></p>
+<h5 id="3-接着会要求你写姓名和邮箱，邮箱会发一个验证码。"><a href="#3-接着会要求你写姓名和邮箱，邮箱会发一个验证码。" class="headerlink" title="3. 接着会要求你写姓名和邮箱，邮箱会发一个验证码。"></a>3. 接着会要求你写姓名和邮箱，邮箱会发一个验证码。</h5><p><img src="https://o903xqe5h.qnssl.com/wp-content/uploads/2015/12/new-startssl_02.gif" alt="验证码"></p>
+<h5 id="4-成功验证了邮箱地址后，StartSSL会自动往你的浏览器中安装唯一一个属于自己管理StartSSL的个人证书。"><a href="#4-成功验证了邮箱地址后，StartSSL会自动往你的浏览器中安装唯一一个属于自己管理StartSSL的个人证书。" class="headerlink" title="4. 成功验证了邮箱地址后，StartSSL会自动往你的浏览器中安装唯一一个属于自己管理StartSSL的个人证书。"></a>4. 成功验证了邮箱地址后，StartSSL会自动往你的浏览器中安装唯一一个属于自己管理StartSSL的个人证书。</h5><p><img src="https://o903xqe5h.qnssl.com/wp-content/uploads/2015/12/new-startssl_04.gif" alt="个人证书"></p>
+<h5 id="5-返回到StartSSL网站，点击“Login”然后就可以使用个人证书登录了。-当然你也可以使用邮箱验证码登陆"><a href="#5-返回到StartSSL网站，点击“Login”然后就可以使用个人证书登录了。-当然你也可以使用邮箱验证码登陆" class="headerlink" title="5. 返回到StartSSL网站，点击“Login”然后就可以使用个人证书登录了。(当然你也可以使用邮箱验证码登陆)"></a>5. 返回到StartSSL网站，点击“Login”然后就可以使用个人证书登录了。(当然你也可以使用邮箱验证码登陆)</h5><p><img src="static/登录方式.png" alt="登录方式"></p>
+<h5 id="6-这是StartSSL的用户控制中心。"><a href="#6-这是StartSSL的用户控制中心。" class="headerlink" title="6. 这是StartSSL的用户控制中心。"></a>6. 这是StartSSL的用户控制中心。</h5><p><img src="static/用户中心.gif" alt="用户中心"></p>
+<h4 id="二-申请-StartSSL-免费-SSL"><a href="#二-申请-StartSSL-免费-SSL" class="headerlink" title="二. 申请 StartSSL 免费 SSL"></a>二. 申请 StartSSL 免费 SSL</h4><h5 id="1-进入到StartSSL用户管理中心，然后找到免费SSL证书的申请页面。"><a href="#1-进入到StartSSL用户管理中心，然后找到免费SSL证书的申请页面。" class="headerlink" title="1. 进入到StartSSL用户管理中心，然后找到免费SSL证书的申请页面。"></a>1. 进入到StartSSL用户管理中心，然后找到免费SSL证书的申请页面。</h5><p><img src="static/免费证书申请.gif" alt="免费证书申请"></p>
+<h5 id="DV、OV、EV-证书的区别："><a href="#DV、OV、EV-证书的区别：" class="headerlink" title="DV、OV、EV 证书的区别："></a>DV、OV、EV 证书的区别：</h5><ul>
+<li><p>DV(Domain Validation): 面向个体用户，安全体系相对较弱，验证方式就是向 whois 信息中的邮箱发送邮件，按照邮件内容进行验证即可通过；</p>
+</li>
+<li><p>OV（Organization Validation），面向企业用户，证书在 DV 证书验证的基础上，还需要公司的授权，CA 通过拨打信息库中公司的电话来确认；</p>
+</li>
+<li><p>EV（Extended Validation），打开 Github 的网页，你会看到 URL 地址栏展示了注册公司的信息，这会让用户产生更大的信任，这类证书的申请除了以上两个确认外，还需要公司提供金融机构的开户许可证，要求十分严格。</p>
+</li>
+</ul>
+<p>OV 和 EV 证书相当昂贵，使用方可以为这些颁发出来的证书买保险，一旦 CA 提供的证书出现问题，一张证书的赔偿金可以达到 100w 刀以上。</p>
+<h5 id="2-点击页面后，会进入到“Select-Certificate-Purpose”，这里一般是选择“Web-Server-SSL-TLS-Certificate”。"><a href="#2-点击页面后，会进入到“Select-Certificate-Purpose”，这里一般是选择“Web-Server-SSL-TLS-Certificate”。" class="headerlink" title="2. 点击页面后，会进入到“Select Certificate Purpose”，这里一般是选择“Web Server SSL/TLS Certificate”。"></a>2. 点击页面后，会进入到“Select Certificate Purpose”，这里一般是选择“Web Server SSL/TLS Certificate”。</h5><p><img src="static/证书目的.gif" alt="证书目的"></p>
+<h5 id="3-如果你是第一次使用StartSSL，会提示你先添加验证域名。"><a href="#3-如果你是第一次使用StartSSL，会提示你先添加验证域名。" class="headerlink" title="3. 如果你是第一次使用StartSSL，会提示你先添加验证域名。"></a>3. 如果你是第一次使用StartSSL，会提示你先添加验证域名。</h5><p><img src="static/验证域名.gif" alt="验证域名"></p>
+<h5 id="4-点击“Validations-Wizard”，这里就可以添加你的域名了。"><a href="#4-点击“Validations-Wizard”，这里就可以添加你的域名了。" class="headerlink" title="4. 点击“Validations Wizard”，这里就可以添加你的域名了。"></a>4. 点击“Validations Wizard”，这里就可以添加你的域名了。</h5><p><img src="static/添加域名2.png" alt="添加域名2"></p>
+<h5 id="5-域名验证，会往你的域名注册邮箱当中发送一个验证码。"><a href="#5-域名验证，会往你的域名注册邮箱当中发送一个验证码。" class="headerlink" title="5. 域名验证，会往你的域名注册邮箱当中发送一个验证码。"></a>5. 域名验证，会往你的域名注册邮箱当中发送一个验证码。</h5><p><img src="static/添加域名3.png" alt="添加域名3"></p>
+<h5 id="6-添加的域名验证成功。"><a href="#6-添加的域名验证成功。" class="headerlink" title="6. 添加的域名验证成功。"></a>6. 添加的域名验证成功。</h5><p><img src="static/域名添加成功.gif" alt="域名添加成功"></p>
+<h5 id="7-添加域名成功后，你就可以开始给自己的域名申请StartSSL免费SSL证书了。"><a href="#7-添加域名成功后，你就可以开始给自己的域名申请StartSSL免费SSL证书了。" class="headerlink" title="7. 添加域名成功后，你就可以开始给自己的域名申请StartSSL免费SSL证书了。"></a>7. 添加域名成功后，你就可以开始给自己的域名申请StartSSL免费SSL证书了。</h5><p><img src="static/证书类型.png" alt="证书类型"><br><img src="static/证书包括的主机名.png" alt="证书包括的主机名"></p>
+<h5 id="8-申请StartSSL免费SSL时，会要求填入CSR。"><a href="#8-申请StartSSL免费SSL时，会要求填入CSR。" class="headerlink" title="8. 申请StartSSL免费SSL时，会要求填入CSR。"></a>8. 申请StartSSL免费SSL时，会要求填入CSR。</h5><p><img src="static/CSR.png" alt="CSR"><br>打开终端，输入命令 <code>openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr</code> 来生成 key 和 csr 文件。（其中 key 是 SSL 非对称加密时的私钥，csr 应该是生成证书的一些信息）<br><img src="static/key_and_csr1.png" alt="key_and_csr"></p>
+<p>私钥密码一定要记住，其它信息不填可以用“.”来表示。</p>
+<p>将生成的 csr 文件内容复制到文本框中，生成证书。</p>
+<h5 id="9-收到了StartSSL免费SSL开通成功的邮件后，你就可以登录到StartSSL免费SSL的“证书列表”中查看并下载了。"><a href="#9-收到了StartSSL免费SSL开通成功的邮件后，你就可以登录到StartSSL免费SSL的“证书列表”中查看并下载了。" class="headerlink" title="9. 收到了StartSSL免费SSL开通成功的邮件后，你就可以登录到StartSSL免费SSL的“证书列表”中查看并下载了。"></a>9. 收到了StartSSL免费SSL开通成功的邮件后，你就可以登录到StartSSL免费SSL的“证书列表”中查看并下载了。</h5><p><img src="static/下载证书.gif" alt="下载证书"></p>
+<h5 id="10-下载下来的StartSSL免费SSL证书包，里面有四个包，分别对应不同的Web环境：Apache、Nginx、Windows-IIS和其它。"><a href="#10-下载下来的StartSSL免费SSL证书包，里面有四个包，分别对应不同的Web环境：Apache、Nginx、Windows-IIS和其它。" class="headerlink" title="10.下载下来的StartSSL免费SSL证书包，里面有四个包，分别对应不同的Web环境：Apache、Nginx、Windows IIS和其它。"></a>10.下载下来的StartSSL免费SSL证书包，里面有四个包，分别对应不同的Web环境：Apache、Nginx、Windows IIS和其它。</h5><p><img src="static/证书.gif" alt="证书"></p>
+<p>我们这里使用 NginxServer.zip。解压之后，就能得到证书了。<br><img src="static/linmu_cert.png" alt="linmu_cert"></p>
+<hr>
+<h2 id="nginx-文件配置"><a href="#nginx-文件配置" class="headerlink" title="nginx 文件配置"></a>nginx 文件配置</h2><p>现在，我们有 3 个 文件：证书、私钥以及 csr 文件。<br><img src="static/生成文件.png" alt="生成文件"></p>
+<p>接下来开始配置 nginx。</p>
+<h3 id="1-全站-SSL"><a href="#1-全站-SSL" class="headerlink" title="1. 全站 SSL"></a>1. 全站 SSL</h3><p>全站做ssl是最常见的一个使用场景，默认端口443，而且一般是单向认证。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    server_name rango.linmu.date;     # 主机名</div><div class="line">    listen 443;             # 监听端口（https 一般监听 443 端口）</div><div class="line">    ssl on;         # (开启 ssl)</div><div class="line">    ssl_certificate /usr/local/nginx/conf/linmu.crt;    # ssl 证书目录</div><div class="line">    ssl_certificate_key /usr/local/nginx/conf/linmu.key.unsecure; # ssl 密钥目录</div><div class="line">    ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; # ssl 加密方式列表</div><div class="line"></div><div class="line">    # 优化 ssl 配置</div><div class="line">    ssl_prefer_server_ciphers on;   # 优先选择服务器端规定的加密方式</div><div class="line">    ssl_session_cache shared:SSL:10m;   # 在并发的连接或者后续的连接中重用SSL会话参数，这样可以避免SSL握手的操作。会话缓存用于保存SSL会话，这些缓存在工作进程间共享，可以使用ssl_session_cache指令进行配置。</div><div class="line">    ssl_session_timeout 4h;     # 1M缓存可以存放大约4000个会话。默认的缓存超时是5分钟，可以使用ssl_session_timeout加大它。</div><div class="line"></div><div class="line">    # Nginx 前端机写入头到后端服务器 gunicorn （为了后续处理，nignx到后端服务器由于一般是内网，所以不加密。）</div><div class="line">    proxy_set_header X-Forwarded-Proto $scheme;</div><div class="line">    proxy_set_header Host              $http_host;</div><div class="line"></div><div class="line">    root /root/tango_with_django_project;</div><div class="line">    charset utf-8;</div><div class="line">    access_log  /var/log/nginx/rango.access.log;</div><div class="line">    error_log   /var/log/nginx/rango.error.log   warn;</div><div class="line"></div><div class="line">    #</div><div class="line">    location = / &#123;</div><div class="line">        proxy_pass http://0.0.0.0:3000/;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location ^~ /static/ &#123;</div><div class="line">        root /var/www/tango_with_django_project/;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location ~* \.(gif|jpg|jpeg|png|css|js|ico)$ &#123;</div><div class="line">        root /root/tango_with_django_project/;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://0.0.0.0:3000;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name rango.linmu.date;</div><div class="line">    return 301 https://rango.linmu.date$request_uri;    # 把 http 请求强制转到 https</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>ssl_certificate证书其实是个公钥，它会被发送到连接服务器的每个客户端，ssl_certificate_key私钥是用来解密的，所以它的权限要得到保护但nginx的主进程能够读取。当然私钥和证书可以放在一个证书文件中，这种方式也只有公钥证书才发送到client。</p>
+<p>ssl_protocols指令用于启动特定的加密协议，nginx在1.1.13和1.0.12版本后默认是ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2，TLSv1.1与TLSv1.2要确保OpenSSL &gt;= 1.0.1 ，SSLv3 现在还有很多地方在用但有不少被攻击的漏洞。</p>
+<p>ssl_ciphers选择加密套件，不同的浏览器所支持的套件（和顺序）可能会不同。这里指定的是OpenSSL库能够识别的写法，你可以通过 openssl -v cipher ‘RC4:HIGH:!aNULL:!MD5’（后面是你所指定的套件加密算法） 来看所支持算法。</p>
+<p>ssl_prefer_server_ciphers on设置协商加密算法时，优先使用我们服务端的加密套件，而不是客户端浏览器的加密套件。</p>
+<h4 id="https优化参数"><a href="#https优化参数" class="headerlink" title="https优化参数"></a>https优化参数</h4><ul>
+<li>ssl_session_cache shared:SSL:10m; : 设置ssl/tls会话缓存的类型和大小。如果设置了这个参数一般是shared，buildin可能会参数内存碎片，默认是none，和off差不多，停用缓存。如shared:SSL:10m表示我所有的nginx工作进程共享ssl会话缓存，官网介绍说1M可以存放约4000个sessions。 详细参考serverfault上的问答ssl_session_cache。</li>
+<li>ssl_session_timeout ： 客户端可以重用会话缓存中ssl参数的过期时间，内网系统默认5分钟太短了，可以设成30m即30分钟甚至4h。<br>设置较长的keepalive_timeout也可以减少请求ssl会话协商的开销，但同时得考虑线程的并发数了。</li>
+</ul>
+<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><ul>
+<li>在生成证书请求csr文件时，如果输入了密码，nginx每次启动时都会提示输入这个密码，可以使用私钥来生成解密后的key来代替，效果是一样的，达到免密码重启的效果：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">openssl rsa -in ittest.key -out ittest_unsecure.key</div></pre></td></tr></table></figure>
+<h3 id="2-部分页面-SSL"><a href="#2-部分页面-SSL" class="headerlink" title="2. 部分页面 SSL"></a>2. 部分页面 SSL</h3><p>一个站点并不是所有信息都是非常机密的，如网上商城，一般的商品浏览可以不通过https，而用户登录以及支付的时候就强制经过https传输，这样用户访问速度和安全性都得到兼顾。</p>
+<p>但是请注意不要理解错了，是对页面加密而不能针对某个请求加密，一个页面或地址栏的URL一般会发起许多请求的，包括css/png/js等静态文件和动态的java或php请求，所以要加密的内容包含页面内的其它资源文件，否则就会出现http与https内容混合的问题。在http页面混有https内容时，页面排版不会发生乱排现象；在https页面中包含以http方式引入的图片、js等资源时，浏览器为了安全起见会阻止加载。</p>
+<p>下面是只对example.com/account/login登录页面进行加密的栗子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">root /apps/www;</div><div class="line">index index.html index.htm;</div><div class="line">server &#123;</div><div class="line">    listen      80;</div><div class="line">    server_name example.com;</div><div class="line">    location ^~ /account/login &#123;</div><div class="line">        rewrite ^ https://$server_name:443$request_uri? permanent;</div><div class="line">    &#125;</div><div class="line">    location / &#123;</div><div class="line">        proxy_pass  http://localhost:8080;</div><div class="line"></div><div class="line">        ### Set headers ####</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">        proxy_redirect     off;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">server &#123;</div><div class="line">    listen 443 ssl;</div><div class="line">    server_name example.com;</div><div class="line">    ssl on;</div><div class="line">    ssl_certificate ../SSL/ittest.crt;</div><div class="line">    ssl_certificate_key ../SSL/ittest.key.unsecure;</div><div class="line">    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;</div><div class="line">    ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;</div><div class="line">    ssl_prefer_server_ciphers on;</div><div class="line">    location ^~ /account/login &#123;</div><div class="line">        proxy_pass  http://localhost:8080;</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">        proxy_redirect     off;</div><div class="line">        ### Most PHP, Python, Rails, Java App can use this header -&gt; https ###</div><div class="line">        proxy_set_header X-Forwarded-Proto  $scheme;</div><div class="line">    &#125;</div><div class="line">    location / &#123;</div><div class="line">        rewrite  ^  http://$server_name$request_uri? permanent;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当浏览器访问 <a href="http://example.com/account/login.xx" target="_blank" rel="external">http://example.com/account/login.xx</a> 时，被301到 <a href="https://example.com/account/login.xx" target="_blank" rel="external">https://example.com/account/login.xx</a> ，在这个ssl加密的虚拟主机里也匹配到/account/login，反向代理到后端服务器，后面的传输过程是没有https的。这个login.xx页面下的其它资源也是经过https请求nginx的，登录成功后跳转到首页时的链接使用http，这个可能需要开发代码里面控制。</p>
+<ul>
+<li>上面配置中使用了proxy_set_header X-Forwarded-Proto $scheme。nignx到后端服务器由于一般是内网，所以一般不加密。如果不把请求的$scheme协议设置在header里，后端会一直认为是http，将导致响应异常。</li>
+<li>ssl配置块还有个与不加密的80端口类似的location /，它的作用是当用户直接通过https访问首页时，自动跳转到不加密端口，你可以去掉它允许用户这样做。</li>
+</ul>
+<hr>
+<h2 id="3-相关链接"><a href="#3-相关链接" class="headerlink" title="3. 相关链接"></a>3. 相关链接</h2><ul>
+<li><a href="https://www.startssl.com" target="_blank" rel="external">startssl 官网</a></li>
+<li><a href="http://www.barretlee.com/blog/2016/04/24/detail-about-ca-and-certs/" target="_blank" rel="external">细说 CA 和证书</a></li>
+<li><a href="https://www.freehao123.com/startssl-ssl-apache-ngnix/" target="_blank" rel="external">startssl 证书申请</a></li>
+<li><a href="http://seanlook.com/2015/05/17/nginx-location-rewrite/" target="_blank" rel="external">nginx配置location总结及rewrite规则写法</a></li>
+<li><a href="http://blog.csdn.net/na_tion/article/details/17334669" target="_blank" rel="external">Nginx部署部分https与部分http</a></li>
+<li><a href="https://segmentfault.com/a/1190000002554673" target="_blank" rel="external">SSL/TLS 原理详解</a></li>
+<li><a href="https://www.zhihu.com/question/21518760/answer/19698894" target="_blank" rel="external">ssl为什么会让http安全,形象比喻</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/21/git-常见问题/" rel="next" title="git 常见问题">
+                <i class="fa fa-chevron-left"></i> git 常见问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/21/Localstorage-使用/" rel="prev" title="Localstorage 使用">
+                Localstorage 使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/22/https-相关总结/"
+           data-title="https 相关总结" data-url="http://yoursite.com/2016/10/22/https-相关总结/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars3.githubusercontent.com/u/11342665?v=3&s=460"
+               alt="Sherry" />
+          <p class="site-author-name" itemprop="name">Sherry</p>
+           
+              <p class="site-description motion-element" itemprop="description">再喧嚣, 也与自己无关</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#https-相关文档"><span class="nav-number">1.</span> <span class="nav-text">https 相关文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">1.1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-证书申请"><span class="nav-number">1.2.</span> <span class="nav-text">1. 证书申请</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#申请流程"><span class="nav-number">1.2.1.</span> <span class="nav-text">申请流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-新StartSSL注册账号"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">一. 新StartSSL注册账号</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-进入-startssl-com"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">1. 进入 startssl.com</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-进入到StartSSL后，直接点击注册账号。"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">2. 进入到StartSSL后，直接点击注册账号。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-接着会要求你写姓名和邮箱，邮箱会发一个验证码。"><span class="nav-number">1.2.1.1.3.</span> <span class="nav-text">3. 接着会要求你写姓名和邮箱，邮箱会发一个验证码。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-成功验证了邮箱地址后，StartSSL会自动往你的浏览器中安装唯一一个属于自己管理StartSSL的个人证书。"><span class="nav-number">1.2.1.1.4.</span> <span class="nav-text">4. 成功验证了邮箱地址后，StartSSL会自动往你的浏览器中安装唯一一个属于自己管理StartSSL的个人证书。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-返回到StartSSL网站，点击“Login”然后就可以使用个人证书登录了。-当然你也可以使用邮箱验证码登陆"><span class="nav-number">1.2.1.1.5.</span> <span class="nav-text">5. 返回到StartSSL网站，点击“Login”然后就可以使用个人证书登录了。(当然你也可以使用邮箱验证码登陆)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-这是StartSSL的用户控制中心。"><span class="nav-number">1.2.1.1.6.</span> <span class="nav-text">6. 这是StartSSL的用户控制中心。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-申请-StartSSL-免费-SSL"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">二. 申请 StartSSL 免费 SSL</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-进入到StartSSL用户管理中心，然后找到免费SSL证书的申请页面。"><span class="nav-number">1.2.1.2.1.</span> <span class="nav-text">1. 进入到StartSSL用户管理中心，然后找到免费SSL证书的申请页面。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DV、OV、EV-证书的区别："><span class="nav-number">1.2.1.2.2.</span> <span class="nav-text">DV、OV、EV 证书的区别：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-点击页面后，会进入到“Select-Certificate-Purpose”，这里一般是选择“Web-Server-SSL-TLS-Certificate”。"><span class="nav-number">1.2.1.2.3.</span> <span class="nav-text">2. 点击页面后，会进入到“Select Certificate Purpose”，这里一般是选择“Web Server SSL/TLS Certificate”。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-如果你是第一次使用StartSSL，会提示你先添加验证域名。"><span class="nav-number">1.2.1.2.4.</span> <span class="nav-text">3. 如果你是第一次使用StartSSL，会提示你先添加验证域名。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-点击“Validations-Wizard”，这里就可以添加你的域名了。"><span class="nav-number">1.2.1.2.5.</span> <span class="nav-text">4. 点击“Validations Wizard”，这里就可以添加你的域名了。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-域名验证，会往你的域名注册邮箱当中发送一个验证码。"><span class="nav-number">1.2.1.2.6.</span> <span class="nav-text">5. 域名验证，会往你的域名注册邮箱当中发送一个验证码。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-添加的域名验证成功。"><span class="nav-number">1.2.1.2.7.</span> <span class="nav-text">6. 添加的域名验证成功。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-添加域名成功后，你就可以开始给自己的域名申请StartSSL免费SSL证书了。"><span class="nav-number">1.2.1.2.8.</span> <span class="nav-text">7. 添加域名成功后，你就可以开始给自己的域名申请StartSSL免费SSL证书了。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-申请StartSSL免费SSL时，会要求填入CSR。"><span class="nav-number">1.2.1.2.9.</span> <span class="nav-text">8. 申请StartSSL免费SSL时，会要求填入CSR。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-收到了StartSSL免费SSL开通成功的邮件后，你就可以登录到StartSSL免费SSL的“证书列表”中查看并下载了。"><span class="nav-number">1.2.1.2.10.</span> <span class="nav-text">9. 收到了StartSSL免费SSL开通成功的邮件后，你就可以登录到StartSSL免费SSL的“证书列表”中查看并下载了。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-下载下来的StartSSL免费SSL证书包，里面有四个包，分别对应不同的Web环境：Apache、Nginx、Windows-IIS和其它。"><span class="nav-number">1.2.1.2.11.</span> <span class="nav-text">10.下载下来的StartSSL免费SSL证书包，里面有四个包，分别对应不同的Web环境：Apache、Nginx、Windows IIS和其它。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx-文件配置"><span class="nav-number">1.3.</span> <span class="nav-text">nginx 文件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-全站-SSL"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. 全站 SSL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#https优化参数"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">https优化参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提示"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-部分页面-SSL"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 部分页面 SSL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-相关链接"><span class="nav-number">1.4.</span> <span class="nav-text">3. 相关链接</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sherry</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sherrycherish"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
