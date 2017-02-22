@@ -350,18 +350,17 @@
       
         
           
-            <p>经常有人用 <code>rm -rf</code> 删除文件夹, 然而,这样做的坏处是: </p>
+            <p>　　经常有人用 <code>rm -rf</code> 删除文件夹, 然而,这样做的坏处是: </p>
 <ul>
 <li>可能会手抖导致系统清空</li>
 <li>命令太长,,,</li>
 </ul>
-<p>解决方案当然是有的:<br>    用 <code>mv /tmp</code></p>
-<p>/tmp - 临时(temporary)文件, 会在重启后清空</p>
-<p>这么做也有问题, 因为服务器是24小时开启的, 这样的话 /tmp 就会堆积大量文件.</p>
-<p>解决问题的思路如下:</p>
-<ul>
+<p>　　解决方案当然是有的:<br>    　　用 <code>mv /tmp</code></p>
+<p>　　/tmp - 临时(temporary)文件, 会在重启后清空</p>
+<p>　　这么做也有问题, 因为服务器是24小时开启的, 这样的话 /tmp 就会堆积大量文件.</p>
+<h3 id="解决问题的思路如下"><a href="#解决问题的思路如下" class="headerlink" title="解决问题的思路如下:"></a>解决问题的思路如下:</h3><ul>
 <li>新建一个 /ttt 文件夹 </li>
-<li>将其设置为: 1, 重启后清空  2, 利用crontab设置一个定时任务, 定时清空该文件夹.<br><a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html" target="_blank" rel="external">http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html</a></li>
+<li>将其设置为: 1, 重启后清空  2, 利用crontab设置一个定时任务, 定时清空该文件夹.<br>　　<a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html" target="_blank" rel="external">http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html</a></li>
 </ul>
 
           
@@ -1170,10 +1169,8 @@
 <h2 id="修改-config-xml-时-注意在冒号之后加上空格"><a href="#修改-config-xml-时-注意在冒号之后加上空格" class="headerlink" title="修改 _config.xml 时, 注意在冒号之后加上空格"></a>修改 _config.xml 时, 注意在冒号之后加上空格</h2><ul>
 <li>修改deploy信息后, 运行<code>hexo d</code> 命令部署到github, 但是没有任何反应, 查了资料后发现没加空格…….</li>
 </ul>
-<h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h2><p>格式是: </p>
-<ul>
-<li>```+语言 </li>
-</ul>
+<h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h2><p>格式是:<br>　　```+语言 </p>
+<h2 id="解决markdown首行空两格的问题"><a href="#解决markdown首行空两格的问题" class="headerlink" title="解决markdown首行空两格的问题"></a>解决markdown首行空两格的问题</h2><p>　　用全角空格</p>
 
           
         
@@ -1575,8 +1572,8 @@
         
           
             <h2 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$.post(<span class="string">'/url'</span>, &#123;<span class="attr">title</span>: <span class="string">' 入 出Node.js'</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123; </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'收 响应'</span>); </div><div class="line">&#125;); </div><div class="line"><span class="built_in">console</span>.log(<span class="string">'发 Ajax结 '</span>); </div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 跑一下就懂了</span></div></pre></td></tr></table></figure>
-<h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>为了解决js的包管理问题:<br>模块, 二进制, Buffer, 字符集编码, I/O流,  进程环境, 文件系统, 套接字, 单元测试, Web服务器网关接口, 包管理</p>
-<h2 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h2><p>相 HTTP，WebSockets接 于 ，它并没有在HTTP的 上 服务 端的推 ， 是在TCP上定 立的 。 人 的部分在于WebSocket的 部分是由HTTP 的，使人 它可能是 于HTTP实 的。<br>WebSocket 要分为 个部分数 。 </p>
+<h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>　　为了解决js的包管理问题:<br>　　　　模块, 二进制, Buffer, 字符集编码, I/O流,  进程环境, 文件系统, 套接字, 单元测试, Web服务器网关接口, 包管理</p>
+<h2 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h2><p>　　相 HTTP，WebSockets接 于 ，它并没有在HTTP的 上 服务 端的推 ， 是在TCP上定 立的 。 人 的部分在于WebSocket的 部分是由HTTP 的，使人 它可能是 于HTTP实 的。<br>WebSocket 要分为 个部分数 。 </p>
 
           
         
