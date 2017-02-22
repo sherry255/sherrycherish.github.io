@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="异步I/O1234567$.post(&apos;/url&apos;, &amp;#123;title: &apos; 入 出Node.js&apos;&amp;#125;, function (data) &amp;#123;     console.log(&apos;收 响应&apos;); &amp;#125;); console.log(&apos;发 Ajax结 &apos;); // 跑一下就懂了
-CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Buffer, 字符">
+<meta name="description" content="异步I/O1234567$.post(&apos;/url&apos;, &amp;#123;title: &apos; 入 出Node.js&apos;&amp;#125;, function (data) &amp;#123;     console.log(&apos;收 响应&apos;); &amp;#125;); console.log(&apos;发 Ajax结 &apos;); // 控制台跑一下就懂了
+CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Buffer,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js学习总结">
 <meta property="og:url" content="http://yoursite.com/2017/01/20/node-js学习总结/index.html">
 <meta property="og:site_name" content="sherry's blog">
-<meta property="og:description" content="异步I/O1234567$.post(&apos;/url&apos;, &amp;#123;title: &apos; 入 出Node.js&apos;&amp;#125;, function (data) &amp;#123;     console.log(&apos;收 响应&apos;); &amp;#125;); console.log(&apos;发 Ajax结 &apos;); // 跑一下就懂了
-CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Buffer, 字符">
-<meta property="og:updated_time" content="2017-02-22T04:09:49.000Z">
+<meta property="og:description" content="异步I/O1234567$.post(&apos;/url&apos;, &amp;#123;title: &apos; 入 出Node.js&apos;&amp;#125;, function (data) &amp;#123;     console.log(&apos;收 响应&apos;); &amp;#125;); console.log(&apos;发 Ajax结 &apos;); // 控制台跑一下就懂了
+CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Buffer,">
+<meta property="og:updated_time" content="2017-02-22T07:29:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js学习总结">
-<meta name="twitter:description" content="异步I/O1234567$.post(&apos;/url&apos;, &amp;#123;title: &apos; 入 出Node.js&apos;&amp;#125;, function (data) &amp;#123;     console.log(&apos;收 响应&apos;); &amp;#125;); console.log(&apos;发 Ajax结 &apos;); // 跑一下就懂了
-CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Buffer, 字符">
+<meta name="twitter:description" content="异步I/O1234567$.post(&apos;/url&apos;, &amp;#123;title: &apos; 入 出Node.js&apos;&amp;#125;, function (data) &amp;#123;     console.log(&apos;收 响应&apos;); &amp;#125;); console.log(&apos;发 Ajax结 &apos;); // 控制台跑一下就懂了
+CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Buffer,">
 
 
 
@@ -347,10 +347,10 @@ CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Bu
       
 
       
-        <h2 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$.post(<span class="string">'/url'</span>, &#123;<span class="attr">title</span>: <span class="string">' 入 出Node.js'</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123; </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'收 响应'</span>); </div><div class="line">&#125;); </div><div class="line"><span class="built_in">console</span>.log(<span class="string">'发 Ajax结 '</span>); </div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 跑一下就懂了</span></div></pre></td></tr></table></figure>
+        <h2 id="异步I-O"><a href="#异步I-O" class="headerlink" title="异步I/O"></a>异步I/O</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$.post(<span class="string">'/url'</span>, &#123;<span class="attr">title</span>: <span class="string">' 入 出Node.js'</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123; </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'收 响应'</span>); </div><div class="line">&#125;); </div><div class="line"><span class="built_in">console</span>.log(<span class="string">'发 Ajax结 '</span>); </div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 控制台跑一下就懂了</span></div></pre></td></tr></table></figure>
 <h2 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h2><p>　　为了解决js的包管理问题:<br>　　　　模块, 二进制, Buffer, 字符集编码, I/O流,  进程环境, 文件系统, 套接字, 单元测试, Web服务器网关接口, 包管理</p>
 <h2 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h2><p>　　相 HTTP，WebSockets接 于 ，它并没有在HTTP的 上 服务 端的推 ， 是在TCP上定 立的 。 人 的部分在于WebSocket的 部分是由HTTP 的，使人 它可能是 于HTTP实 的。<br>WebSocket 要分为 个部分数 。 </p>
-
+<h2 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h2>
       
     </div>
 
@@ -390,8 +390,8 @@ CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Bu
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/21/docker-常用命令总结/" rel="prev" title="docker 常用命令总结">
-                docker 常用命令总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/02/21/hg-常用命令/" rel="prev" title="hg 常用命令">
+                hg 常用命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,7 +468,7 @@ CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Bu
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -514,7 +514,7 @@ CommonJS　　为了解决js的包管理问题:　　　　模块, 二进制, Bu
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#异步I-O"><span class="nav-number">1.</span> <span class="nav-text">异步I/O</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CommonJS"><span class="nav-number">2.</span> <span class="nav-text">CommonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#websocket"><span class="nav-number">3.</span> <span class="nav-text">websocket</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#异步I-O"><span class="nav-number">1.</span> <span class="nav-text">异步I/O</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CommonJS"><span class="nav-number">2.</span> <span class="nav-text">CommonJS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#websocket"><span class="nav-number">3.</span> <span class="nav-text">websocket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Buffer"><span class="nav-number">4.</span> <span class="nav-text">Buffer</span></a></li></ol></div>
             
 
           </div>
