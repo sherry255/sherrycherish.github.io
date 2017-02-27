@@ -1363,7 +1363,11 @@
 <h4 id="staticmethod和-classmethod的区别"><a href="#staticmethod和-classmethod的区别" class="headerlink" title="@staticmethod和@classmethod的区别"></a>@staticmethod和@classmethod的区别</h4><h4 id="is是身份测试，-是相等测试"><a href="#is是身份测试，-是相等测试" class="headerlink" title="is是身份测试，==是相等测试"></a>is是身份测试，==是相等测试</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">'pub'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">''</span>.join([<span class="string">'p'</span>, <span class="string">'u'</span>, <span class="string">'b'</span>])</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</div><div class="line"><span class="keyword">True</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</div><div class="line"><span class="keyword">False</span></div></pre></td></tr></table></figure>
 <h4 id="如何获取文件扩展名"><a href="#如何获取文件扩展名" class="headerlink" title="如何获取文件扩展名"></a>如何获取文件扩展名</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> os</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>fileName, fileExtension = os.path.splitext(<span class="string">'/path/to/somefile.ext'</span>)</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>fileName</div><div class="line"><span class="string">'/path/to/somefile'</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>fileExtension</div><div class="line"><span class="string">'.ext'</span></div></pre></td></tr></table></figure>
 <h4 id="如何获取list中包含某个元素所在的下标"><a href="#如何获取list中包含某个元素所在的下标" class="headerlink" title="如何获取list中包含某个元素所在的下标"></a>如何获取list中包含某个元素所在的下标</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="string">"foo"</span>,<span class="string">"bar"</span>,<span class="string">"baz"</span>].index(<span class="string">'bar'</span>)</div><div class="line"><span class="number">1</span></div></pre></td></tr></table></figure>
-<p>#</p>
+<h4 id="浅拷贝深拷贝"><a href="#浅拷贝深拷贝" class="headerlink" title="浅拷贝深拷贝"></a>浅拷贝深拷贝</h4><ul>
+<li>对象的赋值是:获得了当前元素的地址元素以及子元素的地址</li>
+<li>浅拷贝: 浅拷贝仅仅复制了容器中元素的地址</li>
+<li>深拷贝，完全拷贝了一个副本，容器内部元素地址都不一样</li>
+</ul>
 
           
         
@@ -1727,7 +1731,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
