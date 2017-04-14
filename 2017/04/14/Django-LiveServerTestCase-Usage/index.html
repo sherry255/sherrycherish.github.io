@@ -113,7 +113,7 @@ windows主机测试环境的搭建 : selenium-server-standalone-3.3.1(另外, Ma
 windows主机测试环境的搭建 : selenium-server-standalone-3.3.1(另外, Mac也要装)
 
 测试的编写.(先在">
-<meta property="og:updated_time" content="2017-04-14T11:29:05.000Z">
+<meta property="og:updated_time" content="2017-04-14T15:13:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Django LiveServerTestCase Usage">
 <meta name="twitter:description" content="使用Django LiveServerTestCase  和 Selenium 搭建自动化测试的流程:
@@ -390,7 +390,7 @@ windows主机测试环境的搭建 : selenium-server-standalone-3.3.1(另外, Ma
 </li>
 </ul>
 <pre><code>java -Dwebdriver.chrome.driver=&quot;C:\Program Files (x86)\chromedriver\chromedriver.exe&quot; -jar selenium-server-standalone-3.3.1.jar
-</code></pre><p>(备注: 因为这里需要在虚拟机里面使用remote方式连接主机(Windows)进行测试, 所以需要使用<code>-Dwebdriver.chrome.driver=&quot;C:\Program Files (x86)\chromedriver\chromedriver.exe&quot;</code>来指定chrome的路径, 如果需要测试多个浏览器, 则需要指定多个浏览器的地址. 可以写一个.bat文件来执行这个脚本.  )</p>
+</code></pre><p>(备注: 因为这里需要在虚拟机里面使用remote方式连接主机(Windows)进行测试, 所以需要使用<code>-Dwebdriver.chrome.driver=&quot;C:\Program Files (x86)\chromedriver\chromedriver.exe&quot;</code>来指定chrome的路径, 如果需要测试多个浏览器, 则需要指定多个浏览器的地址. 可以写一个.bat文件来执行这个脚本.  )<br>(备注2: 一开始怎么都连不上windows的主机, 经过大佬指点, 在java命令里加参数(-D), 瞬间霍然开朗, 沉舟侧畔千帆过, 柳暗花明又一村.谢谢大佬^_^) </p>
 <ul>
 <li>测试<br>Django 1.11 使用 <code>python manage.py test</code> 就可以自动测试所有的test.  包括之前官方给的demo以及</li>
 </ul>
